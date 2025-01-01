@@ -1,4 +1,11 @@
 # Distribution / packaging
 node_modules
 
+final_project/.idea/
+.idea/
+./.gitignore
 
+
+final_project/package-lock.json
+
+final_project/package.json
