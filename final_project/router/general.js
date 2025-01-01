@@ -31,18 +31,18 @@ public_users.get('/isbn/:isbn',function (req, res) {
 public_users.get('/author/:author',function (req, res) {
     const author = req.params.author;
 
-    let res = [];
+    let out = [];
     for (let [key, book] of Object.entries(books)) {
         if (author === book.author) {
-            res.push(book);
+            out.push(book);
         }
     }
 
-    if (res.length === 0) {
-        return res.status(404).json({});
+    if (out.length === 0) {
+        return out.status(404).json({});
     }
 
-    return res.status(200).json(res);
+    return res.status(200).json(out);
 });
 
 // Get all books based on title
