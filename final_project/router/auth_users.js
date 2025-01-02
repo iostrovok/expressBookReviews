@@ -20,8 +20,6 @@ regd_users.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    console.log('login', 'username', username, 'password', password);
-
     if (!username || !password) {
         return res.status(404).json({message: 'Error logging in'});
     }
@@ -44,18 +42,12 @@ regd_users.post('/login', (req, res) => {
 
 // Add a book review
 regd_users.put("/auth/review/:isbn", (req, res) => {
-    console.log('put /auth/review/ req.params', req.params);
-    console.log('put /auth/review/ req.body', req.body);
-
     const isbn = req.params.isbn;
-    console.log('put /auth/review/', 'isbn', isbn);
-
     if (!isbn) {
         return res.status(404).json({message: 'ISBN is empty'});
     }
 
     const review = req.body.review;
-    console.log('put /auth/review/', 'review', review);
     if (!review) {
         return res.status(404).json({message: 'Review is empty'});
     }
